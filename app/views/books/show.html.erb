@@ -9,6 +9,17 @@
 
   <div class="bookmark_and_social">
     <%= render 'books/social_buttons', url: request.url %>
+    <% if user_signed_in? %>
+      <div class="bookmark">
+        <% if @my_bookmark %>
+            <!-- ブックマーク済 -->
+            <%= button_to 'ブックマーク解除', bookmark_path(@my_bookmark.id), method: :delete, class: 'btn btn-danger' %>
+        <% else %>
+            <!-- 未ブックマーク -->
+            <%= button_to 'ブックマーク', bookmarks_path(bookmark: {book_id: @book.id}), class: 'btn btn-primary' %>
+        <% end %>
+      </div>
+    <% end %>
   </div>
 
   <% if user_signed_in? && @book.user_id == current_user.id %>
