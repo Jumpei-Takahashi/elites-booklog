@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  get 'books/index'
+  # get 'books/index'
   root to: 'books#index'
+  resources :books
 
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
