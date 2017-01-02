@@ -3,7 +3,29 @@ require 'rails_helper'
 RSpec.describe BooksController, type: :controller do
 
   describe 'GET /books' do
+    subject { get :index }
 
+    context 'Bookの情報が無い場合' do
+      it 'Bookの取得数が0であること' do
+        subject
+        books = assigns(:books)
+        expect(books.length).to eq(0)
+      end
+    end
+
+    context 'Bookの情報がある場合' do
+      before {
+        5.times do
+          create(:book)
+        end
+      }
+
+      it 'Bookの情報が1つ以上取得できること' do
+        subject
+        books = assigns(:books)
+        expect(books.length).to be >= 1
+      end
+    end
   end
 
   describe 'GET /books/:id' do
@@ -73,5 +95,4 @@ RSpec.describe BooksController, type: :controller do
       }.to raise_exception(ActiveRecord::RecordNotFound)
     end
   end
-
 end
