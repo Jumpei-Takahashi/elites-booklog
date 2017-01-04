@@ -3,8 +3,15 @@ class BooksController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    # includesでbookmark、review の先読みを追加
-    @books = Book.includes(:bookmarks, :reviews).order('updated_at DESC')
+    #  書籍一覧画面に、「自分の登録した書籍」「ブックマークした書籍」で絞り込めるリンクを実装のため、
+    # indexアクションに、ftリクエストが渡された場合にBook一覧を絞り込む処理を追加。
+    if user_signed_in? && params[:ft] && params[:ft] == 'my'
+      @books = Book.includes(:bookmarks, :reviews, :user).where(user_id: current_user.id).order('updated_at DESC')
+    elsif user_signed_in? && params[:ft] && params[:ft] == 'bookmark'
+      @books = Book.joins(:bookmarks).where('bookmarks.user_id = ?', current_user.id).order('updated_at DESC')
+    else
+      @books = Book.includes(:bookmarks, :reviews, :user).order('updated_at DESC')
+    end
   end
   
   def show
