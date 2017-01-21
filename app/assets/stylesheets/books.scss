@@ -202,3 +202,15 @@ div.filter {
     }
   }
 }
+
+div.category {
+  font-size: 0;
+}
+
+div.category-list {
+  display: inline-block;
+  font-size: 18px;
+  padding: 6px;
+  border: 1px solid gray;
+  border-radius: 2px;
+}
