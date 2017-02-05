@@ -18,7 +18,43 @@
       </div>
       <hr>
   <% end %>
+  
 　<%# 以下にカテゴリ一覧を追加 %>
+　<div class="category">
+　  <div class="category-list"><%= link_to "文学・評論", root_path(ft: "文学・評論")%></div>
+　  <div class="category-list"><%= link_to "人文・思想", root_path(ft: "人文・思想")%></div>
+　  <div class="category-list"><%= link_to "社会・政治・思想", root_path(ft: "社会・政治・思想")%></div>
+　  <div class="category-list"><%= link_to "ノンフィクション", root_path(ft: "ノンフィクション")%></div>
+　  <div class="category-list"><%= link_to "歴史・地理", root_path(ft: "歴史・地理")%></div>
+　  <div class="category-list"><%= link_to "ビジネス・経済", root_path(ft: "ビジネ図・経済")%></div>
+　  <div class="category-list"><%= link_to "投資・金融・会社経営", root_path(ft: "投資・金融・会社経営")%></div>
+　  <div class="category-list"><%= link_to "科学・テクノロジー", root_path(ft: "科学・テクノロジー")%></div>
+　  <div class="category-list"><%= link_to "医学・薬学・看護学・歯科学", root_path(ft: "医学・薬学・看護学・歯科学")%></div>
+　  <div class="category-list"><%= link_to "コンピュータ・IT", root_path(ft: "コンピュータ・IT")%></div>
+　  <div class="category-list"><%= link_to "アート・建築・デザイン", root_path(ft: "アート・建築・デザイン")%></div>
+　  <div class="category-list"><%= link_to "趣味・実用", root_path(ft: "趣味・実用")%></div>
+　  <div class="category-list"><%= link_to "スポーツ・アウトドア", root_path(ft: "スポーツ・アウトドア")%></div>
+　  <div class="category-list"><%= link_to "資格・検定・就職", root_path(ft: "資格・検定・就職")%></div>
+　  <div class="category-list"><%= link_to "暮らし・健康・子育て", root_path(ft: "暮らし・健康・子育て")%></div>
+　  <div class="category-list"><%= link_to "旅行ガイド・マップ", root_path(ft: "旅行ガイド・マップ")%></div>
+　  <div class="category-list"><%= link_to "語学・辞事典・年鑑", root_path(ft: "語学・辞事典・年鑑")%></div>
+　  <div class="category-list"><%= link_to "英語学習", root_path(ft: "英語学習")%></div>
+　  <div class="category-list"><%= link_to "教育・学参・受験", root_path(ft: "教育・学参・受験")%></div>
+　  <div class="category-list"><%= link_to "絵本・児童書", root_path(ft: "絵本・児童書")%></div>
+　  <div class="category-list"><%= link_to "コミック・ラノベ・BL", root_path(ft: "コミック・ラノベ・BL")%></div>
+　  <div class="category-list"><%= link_to "ライトノベル", root_path(ft: "ライトノベル")%></div>
+　  <div class="category-list"><%= link_to "タレント写真集", root_path(ft: "タレント写真集")%></div>
+　  <div class="category-list"><%= link_to "ゲーム攻略本", root_path(ft: "ゲーム攻略本")%></div>
+　  <div class="category-list"><%= link_to "エンターテイメント", root_path(ft: "エンターテイメント")%></div>
+　  <div class="category-list"><%= link_to "新書・文庫・ノベルス", root_path(ft: "新書・文庫・ノベルス")%></div>
+　  <div class="category-list"><%= link_to "雑誌", root_path(ft: "雑誌")%></div>
+　  <div class="category-list"><%= link_to "楽譜・スコア・音楽書", root_path(ft: "楽譜・スコア・音楽書")%></div>
+　  <div class="category-list"><%= link_to "カレンダー・手帳", root_path(ft: "カレンダー・手帳")%></div>
+　  <div class="category-list"><%= link_to "ポスター", root_path(ft: "ポスター")%></div>
+　  <div class="category-list"><%= link_to "古本", root_path(ft: "古本")%></div>
+　  <div class="category-list"><%= link_to "古書・希少本", root_path(ft: "古書・希少本")%></div>
+　  <div class="category-list"><%= link_to "アダルト", root_path(ft: "アダルト")%></div>
+　</div>
 　
   <div>
   <%= button_to 'Bookを登録', new_book_path, method: :get, class: 'btn btn-primary' %>
